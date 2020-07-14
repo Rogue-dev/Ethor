@@ -1,0 +1,73 @@
+br {
+  line-height: 10px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+html {
+  height: 99%;
+  width: 99%;
+}
+body {
+  width: 99%;
+  height: 99%;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+
+#scroll {
+  position: absolute;
+}
+#user-input {
+  position: fixed;
+  max-width: inherit;
+  width: 100%;
+  left: 0%;
+  top: 96%;
+}
+input:focus {
+  outline: none;
+}
+#test {
+  visibiliy: hidden;
+}
+
+#game-text {
+  height: 85%;
+  width: 75%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: blue;
+  overflow-y: scroll;
+}
+
+#myProgress {
+  width: 25%;
+  background-color: grey;
+}
+
+#myHealthBar {
+  width: 95%;
+  height: 30px;
+  background-color: red;
+}
+
+#minimap {
+  border-style: solid;
+  width: 320px;
+  height: 320px;
+  margin-left: 76%;
+  margin-top: -43.4%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+canvas {
+  margin: 0px;
+}

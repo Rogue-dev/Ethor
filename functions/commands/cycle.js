@@ -1,0 +1,39 @@
+/*global rooms currentRoom addText*/
+var tabEnemy = 0;
+var enemy = 0;
+window.addEventListener("keydown", function(event) {
+  var value = $("#user-input")
+    .val()
+    .toLowerCase();
+
+  if (value.split(" ")[0] + " " + value.split(" ")[1] === "talk to") {
+    var word = value.split(" ")[0] + " " + value.split(" ")[1];
+  } else {
+    var word = value.split(" ")[0];
+  }
+  $("#user-input").focus();
+  if (event.code === "Tab") {
+    var userInput = document.getElementById("user-input").value;
+    if (
+      userInput === "attack" ||
+      userInput === "attack " ||
+      userInput === "attack " + tabEnemy
+    ) {
+      try {
+        if (enemy <= Object.keys(rooms[currentRoom].enemies).length - 1) {
+          tabEnemy = Object.keys(rooms[currentRoom].enemies)[enemy];
+        } else {
+          enemy = 0;
+          tabEnemy = Object.keys(rooms[currentRoom].enemies)[enemy];
+        }
+      } catch (err) {
+        addText("No target found for that command!");
+        $("text-input").value = "";
+      }
+      if (tabEnemy !== 0) {
+        document.getElementById("user-input").value = "attack " + tabEnemy;
+        enemy++;
+      }
+    }
+  }
+});
