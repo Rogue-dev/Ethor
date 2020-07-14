@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ethor</title>
+  </head>
+
+  <body>
+    <link rel="stylesheet" href="style.css" />
+    <div id="game-text" tabindex="2">
+      <p>Welcome to the Land of Ethor!</p>
+      <p>
+        To see all available commands, type "help".
+      </p>
+    </div>
+    <div id="scroll" tabindex="1">
+      <input
+        id="user-input"
+        placeholder="Please type your command..."
+        data-lpignore="true"
+        tabindex="1"
+        onblur="this.focus()"
+        spellcheck="false"
+        autofocus
+      />
+    </div>
+    <div id="myProgress">
+      <div id="myHealthBar"></div>
+    </div>
+    <div id="minimap">
+      <canvas id="canvas" width="320" height="320"></canvas>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="functions/other/sleep.js"></script>
+    <script src="misc/rooms.js"></script>
+    <script src="misc/setup.js"></script>
+    <script src="functions/other/experience.js"></script>
+    <script src="functions/ambient/healthRegen.js"></script>
+    <script src="misc/objects.js"></script>
+    <script src="functions/commands/cycle.js"></script>
+    <script src="functions/other/bestWeapon.js"></script>
+    <script src="functions/other/addText.js"></script>
+    <script src="functions/quests/oldLadyQuest.js"></script>
+    <script src="functions/ambient/healthbar.js"></script>
+    <script src="functions/commands/showExits.js"></script>
+    <script src="functions/commands/changeRoom.js"></script>
+    <script src="functions/commands/showHelp.js"></script>
+    <script src="functions/commands/showInventory.js"></script>
+    <script src="functions/commands/showQuests.js"></script>
+    <script src="functions/commands/talk.js"></script>
+    <script src="functions/commands/attack.js"></script>
+    <script src="functions/other/minimap.js"></script>
+    <script src="misc/main.js"></script>
+  </body>
+</html>
