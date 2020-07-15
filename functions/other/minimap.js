@@ -1,4 +1,4 @@
-/*global rooms currentRoom*/
+/*global rooms currentRoom roomArr minimap*/
 var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
 var startCellX = 160;
@@ -9,19 +9,15 @@ function minimap() {
   ctx.fillStyle = "green";
   ctx.fillRect(startCellX, startCellY, 10, 10);
   ctx.fillStyle = "red";
-  keyRooms = Object.keys(rooms[currentRoom].directions);
-  for (var i = 0; i < keyRooms.length; i++) {
-    if (keyRooms[i] === "north") {
-      ctx.fillRect(startCellX, startCellY - 20, 10, 10);
-    }
-    if (keyRooms[i] === "east") {
-      ctx.fillRect(startCellX + 20, startCellY, 10, 10);
-    }
-    if (keyRooms[i] === "south") {
-      ctx.fillRect(startCellX, startCellY + 20, 10, 10);
-    }
-    if (keyRooms[i] === "west") {
-      ctx.fillRect(startCellX - 20, startCellY, 10, 10);
+  for (var i = 0; i < roomArr.length; i++) {
+    var roomX = roomArr[i].minimap.x;
+    var roomY = roomArr[i].minimap.y;
+    if (rooms[currentRoom] === roomArr[i]) {
+      ctx.fillStyle = "green";
+      ctx.fillRect(roomX * 20 + startCellX, roomY * 20 + startCellY, 10, 10);
+    } else {
+      ctx.fillStyle = "red";
+      ctx.fillRect(roomX * 20 + startCellX, roomY * 20 + startCellY, 10, 10);
     }
   }
   requestAnimationFrame(minimap);
