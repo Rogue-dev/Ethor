@@ -6,6 +6,10 @@ var rooms = {
     directions: {
       north: "clearing1",
       west: "bridge1"
+    },
+    minimap: {
+      X: 0,
+      Y: 0
     }
   },
   clearing1: {
@@ -16,6 +20,10 @@ var rooms = {
       south: "start",
       north: "lighthouse",
       east: "trolls"
+    },
+    minimap: {
+      X: 0,
+      Y: -1
     }
   },
   lighthouse: {
@@ -28,6 +36,10 @@ var rooms = {
     people: {
       "strange old lady":
         "I have a quest for you, though you may not want to indulge the wants of a strange old lady like me. If you do, though, I'll make it worth your while. I need you to get some meat. It's been so long since I've had meat..."
+    },
+    minimap: {
+      X: 0,
+      Y: -2
     }
   },
   trolls: {
