@@ -8,8 +8,8 @@ var rooms = {
       west: "bridge1"
     },
     minimap: {
-      X: 0,
-      Y: 0
+      x: 0,
+      y: 0
     }
   },
   clearing1: {
@@ -22,8 +22,8 @@ var rooms = {
       east: "trolls"
     },
     minimap: {
-      X: 0,
-      Y: -1
+      x: 0,
+      y: -1
     }
   },
   lighthouse: {
@@ -38,8 +38,8 @@ var rooms = {
         "I have a quest for you, though you may not want to indulge the wants of a strange old lady like me. If you do, though, I'll make it worth your while. I need you to get some meat. It's been so long since I've had meat..."
     },
     minimap: {
-      X: 0,
-      Y: -2
+      x: 0,
+      y: -2
     }
   },
   trolls: {
@@ -80,6 +80,10 @@ var rooms = {
         status: "alive",
         name: "troll3"
       }
+    },
+    minimap: {
+      x: 1,
+      y: -1
     }
   },
   bridge1: {
@@ -87,6 +91,10 @@ var rooms = {
     directions: {
       east: "start",
       west: "bridge2"
+    },
+    minimap: {
+      x: -1,
+      y: 0
     }
   },
   bridge2: {
@@ -94,6 +102,16 @@ var rooms = {
       "You try to cross the bridge but a troll jumps out and bites your leg!",
     directions: {
       east: "bridge1"
+    },
+    minimap: {
+      x: -2,
+      y: 0
     }
   }
 };
+
+var roomArr = Object.keys(rooms)
+for (var i = 0; i < Object.keys(rooms).length; i++) {
+  roomArr[i] = rooms[roomArr[i]]
+  console.log(roomArr)
+}
