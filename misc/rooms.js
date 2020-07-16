@@ -84,6 +84,9 @@ var rooms = {
     minimap: {
       x: 1,
       y: -1
+    },
+    items: {
+      meat: "available",
     }
   },
   bridge1: {
