@@ -1,5 +1,5 @@
 /*global rooms quests currentRoom commands inventory addText oldLadyQuest showExits changeRoom target monster showHelp
-showInventory talk showQuests attack cycle*/
+showInventory talk showQuests attack cycle get*/
 function playerInput(input) {
   if (input.split(" ")[0] + " " + input.split(" ")[1] === "talk to") {
     var command = input.split(" ")[0] + " " + input.split(" ")[1];
@@ -31,10 +31,13 @@ function playerInput(input) {
       monster = input.split(" ")[1];
       attack(monster);
       break;
+    case "get":
+      get(input.split(" ")[1]);
+      break;
     case "":
       break;
     default:
-      addText("Invalid command!")
+      addText("Invalid command!");
   }
 }
 
