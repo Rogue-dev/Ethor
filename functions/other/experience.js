@@ -1,5 +1,6 @@
 /*global level experience addText*/
 var xpToNextLevel = 0;
+var maxHealth = 100;
 function checkExperience() {
   xpToNextLevel = Math.round((3 * Math.exp(level/2)));
   if (experience >= xpToNextLevel) {
@@ -8,7 +9,8 @@ function checkExperience() {
     experience = excessXP;
     addText("<b>You Leveled Up!</b>");
     addText("You are now level " + level + "!");
-    addText("You have 3 stat points to distribute.");
+    addText("Your health has increased!")
+    maxHealth = Math.round(maxHealth+(maxHealth/10))
   }
 }
 checkExperience();

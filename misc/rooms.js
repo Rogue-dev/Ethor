@@ -52,7 +52,7 @@ var rooms = {
     enemies: {
       troll1: {
         health: 10,
-        damage: 3,
+        damage: Math.round(Math.random() * Math.floor(13)),
         loot: "Ragged Leather Helmet",
         attackNotification: "You attack a troll",
         weapon: "rock",
@@ -62,7 +62,7 @@ var rooms = {
       },
       troll2: {
         health: 11,
-        damage: 3,
+        damage: Math.round(Math.random() * Math.floor(13)),
         loot: "Ragged Leather Leggings",
         attackNotification: "You attack a troll",
         weapon: "rock",
@@ -72,7 +72,7 @@ var rooms = {
       },
       troll3: {
         health: 10,
-        damage: 3,
+        damage: Math.round(Math.random() * Math.floor(13)),
         loot: "Ragged Leather Boots",
         attackNotification: "You attack a troll",
         weapon: "rock",
@@ -118,3 +118,7 @@ for (var i = 0; i < Object.keys(rooms).length; i++) {
   roomArr[i] = rooms[roomArr[i]]
   console.log(roomArr)
 }
+rooms.start.minimap.x = 0;
+rooms.start.minimap.y = 0;
+var testRoom = "start"
+var roomsToBeTested = Object.keys(rooms);
