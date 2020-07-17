@@ -8,7 +8,7 @@ function checkExperience() {
     experience = excessXP;
     addText("<b>You Leveled Up!</b>");
     addText("You are now level " + level + "!");
-    addText("You have 3 stat points to distribute.");
+    addText("Your health has increased!")
   }
 }
 checkExperience();
