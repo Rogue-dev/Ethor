@@ -52,7 +52,7 @@ var rooms = {
     enemies: {
       troll1: {
         health: 10,
-        damage: Math.random() * Math.floor(13),
+        damage: Math.round(Math.random() * Math.floor(13)),
         loot: "Ragged Leather Helmet",
         attackNotification: "You attack a troll",
         weapon: "rock",
@@ -62,7 +62,7 @@ var rooms = {
       },
       troll2: {
         health: 11,
-        damage: Math.random() * Math.floor(13),
+        damage: Math.round(Math.random() * Math.floor(13)),
         loot: "Ragged Leather Leggings",
         attackNotification: "You attack a troll",
         weapon: "rock",
@@ -72,7 +72,7 @@ var rooms = {
       },
       troll3: {
         health: 10,
-        damage: Math.random() * Math.floor(13),
+        damage: Math.round(Math.random() * Math.floor(13)),
         loot: "Ragged Leather Boots",
         attackNotification: "You attack a troll",
         weapon: "rock",
