@@ -131,5 +131,4 @@ for (var i = 0; i < Object.keys(rooms).length; i++) {
 }
 rooms.start.minimap.x = 0;
 rooms.start.minimap.y = 0;
-var testRoom = "start";
-var roomsToBeTested = Object.keys(rooms);
+var roomsToBeTested = [Object.keys(rooms.start.directions)]

@@ -13,7 +13,9 @@ const commands = [
   "Talk to: Syntax: <b>\"talk to \"{person}</b> Description: Talk to a person.",
   "Quests: Syntax: <b>\"quests\"</b> Description: Shows current quests.",
   "Exits: Syntax: <b>\"exits\"</b> Description: Show exits to current room.",
-  "Attack: Syntax: <b>\"attack \"{monster} [\"with \" {weapon}]</b> Description: Attack monsters."
+  "Attack: Syntax: <b>\"attack \"{monster} [\"with \" {weapon}]</b> Description: Attack monsters.",
+  "Other:",
+  "You can press \"tab\" to cycle throught the possible targets of the attack command, if you currently have attack typed into the textbox."
 ];
 var inventory = ["rusty bronze dagger"];
 var quests = [];
