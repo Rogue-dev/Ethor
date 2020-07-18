@@ -2,10 +2,11 @@
 monsterDamage monsterLoot invBestWeapon
 checkBestWeapon health bestWeapon monsterWeapon
 inventory experience sleep monsterExperience
-checkExperience*/
+checkExperience checkDefense defense*/
 async function attack(monster) {
   if (rooms[currentRoom].enemies[monster] !== undefined && rooms[currentRoom].enemies[monster].status === "alive") {
     checkBestWeapon();
+    checkDefense();
     monsterHealth = rooms[currentRoom].enemies[monster].health;
     monsterDamage = rooms[currentRoom].enemies[monster].damage;
     monsterLoot = rooms[currentRoom].enemies[monster].loot;
@@ -34,7 +35,7 @@ async function attack(monster) {
       }
       await sleep(500)
       addText(monster + " attacks you with " + monsterWeapon);
-      health = health - monsterDamage;
+      health = health - Math.round(monsterDamage-(defense/100));
       await sleep(500)
       addText("You have " + health + " health left.");
       if (health <= 0) {

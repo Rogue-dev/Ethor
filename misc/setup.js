@@ -28,3 +28,4 @@ var monsterExperience = 0;
 var experience = 0;
 var level = 1;
 var cycleVar = 0;
+var defense = 0;

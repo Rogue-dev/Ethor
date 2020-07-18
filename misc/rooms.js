@@ -86,7 +86,7 @@ var rooms = {
       y: -1
     },
     items: {
-      meat: "available",
+      meat: "available"
     }
   },
   bridge1: {
@@ -106,6 +106,18 @@ var rooms = {
     directions: {
       east: "bridge1"
     },
+    enemies: {
+      bridgetroll: {
+        health: 30,
+        damage: Math.round(Math.random() * Math.floor(25)),
+        loot: "Leather Chestpiece",
+        attackNotification: "You attack a bridge troll",
+        weapon: "bronze dagger",
+        experience: 20,
+        status: "alive",
+        name: "bridgetroll"
+      }
+    },
     minimap: {
       x: -2,
       y: 0
@@ -113,12 +125,11 @@ var rooms = {
   }
 };
 
-var roomArr = Object.keys(rooms)
+var roomArr = Object.keys(rooms);
 for (var i = 0; i < Object.keys(rooms).length; i++) {
-  roomArr[i] = rooms[roomArr[i]]
-  console.log(roomArr)
+  roomArr[i] = rooms[roomArr[i]];
 }
 rooms.start.minimap.x = 0;
 rooms.start.minimap.y = 0;
-var testRoom = "start"
+var testRoom = "start";
 var roomsToBeTested = Object.keys(rooms);
