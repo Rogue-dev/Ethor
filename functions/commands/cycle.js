@@ -1,6 +1,9 @@
 /*global rooms currentRoom addText*/
 var tabEnemy = 0;
 var enemy = 0;
+var tabTalk = 0;
+var talk = 0;
+
 window.addEventListener("keydown", function(event) {
   var value = $("#user-input")
     .val()
@@ -33,6 +36,27 @@ window.addEventListener("keydown", function(event) {
       if (tabEnemy !== 0) {
         document.getElementById("user-input").value = "attack " + tabEnemy;
         enemy++;
+      }
+      if (
+        userInput === "talk to" ||
+        userInput === "talk to " ||
+        userInput === "talk to " + tabTalk
+      ) {
+        try {
+          if (talk <= Object.keys(rooms[currentRoom].enemies).length - 1) {
+            tabEnemy = Object.keys(rooms[currentRoom].enemies)[talk];
+          } else {
+            talk = 0;
+            tabTalk = Object.keys(rooms[currentRoom].enemies)[talk];
+          }
+        } catch (err) {
+          addText("No target found for that command!");
+          $("text-input").value = "";
+        }
+        if (tabEnemy !== 0) {
+          document.getElementById("user-input").value = "attack " + tabEnemy;
+          talk++;
+        }
       }
     }
   }
