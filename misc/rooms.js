@@ -130,5 +130,49 @@ for (var i = 0; i < Object.keys(rooms).length; i++) {
   roomArr[i] = rooms[roomArr[i]];
 }
 rooms.start.minimap.x = 0;
-rooms.start.minimap.y = 0;
-var roomsToBeTested = [Object.keys(rooms.start.directions)]
+rooms.start.minimap.y = -1;
+var roomsToBeTested = [];
+if (rooms.start.directions.north !== undefined) {
+  roomsToBeTested.push("start:" + rooms.start.directions.north);
+}
+if (rooms.start.directions.east !== undefined) {
+  roomsToBeTested.push("start:" + rooms.start.directions.east);
+}
+if (rooms.start.directions.south !== undefined) {
+  roomsToBeTested.push("start:" + rooms.start.directions.south);
+}
+if (rooms.start.directions.west !== undefined) {
+  roomsToBeTested.push("start:" + rooms.start.directions.west);
+}
+var alreadyTested = ["start"];
+while (roomsToBeTested.length !== 0) {
+  for (var i = 0; i < roomsToBeTested.length; i++) {
+    var originRoom = roomsToBeTested[i].split(":")[0];
+    var testx = rooms[originRoom].minimap.x;
+    var testy = rooms[originRoom].minimap.y;
+    var newRoom = roomsToBeTested[i].split(":")[1];
+    if (rooms[originRoom].directions.north === newRoom) {
+      rooms[newRoom].minimap.y = testy++;
+    }
+    if (rooms[originRoom].directions.east === newRoom) {
+      rooms[newRoom].minimap.x = testx--;
+    }
+    if (rooms[originRoom].directions.south === newRoom) {
+      rooms[newRoom].minimap.y = testy--;
+    }
+    if (rooms[originRoom].directions.west === newRoom) {
+      rooms[newRoom].minimap.x = testx++;
+    }
+    alreadyTested.push(newRoom)
+    var addingTest = Object.values(rooms[newRoom].directions)
+    for (var i = 0; i < addingTest.length; i++) {
+      if (!alreadyTested.includes(addingTest[i])) {
+        roomsToBeTested.push(addingTest[i])
+        console.log(roomsToBeTested)
+      }
+    }
+    rooms.start.minimap.x = 0;
+    rooms.start.minimap.y = 0;
+  }
+  roomsToBeTested = [];
+}

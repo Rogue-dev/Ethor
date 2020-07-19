@@ -3,7 +3,7 @@ var tabEnemy = 0;
 var enemy = 0;
 var tabTalk = 0;
 var talk = 0;
-
+var word;
 window.addEventListener("keydown", function(event) {
   var value = $("#user-input")
     .val()
@@ -33,28 +33,38 @@ window.addEventListener("keydown", function(event) {
         addText("No target found for that command!");
         $("text-input").value = "";
       }
+      console.log("Above recycle script");
       if (tabEnemy !== 0) {
         document.getElementById("user-input").value = "attack " + tabEnemy;
         enemy++;
       }
-      if (
-        userInput === "talk to" ||
-        userInput === "talk to " ||
-        userInput === "talk to " + tabTalk
-      ) {
-        try {
-          if (talk <= Object.keys(rooms[currentRoom].enemies).length - 1) {
-            tabEnemy = Object.keys(rooms[currentRoom].enemies)[talk];
-          } else {
-            talk = 0;
-            tabTalk = Object.keys(rooms[currentRoom].enemies)[talk];
-          }
-        } catch (err) {
-          addText("No target found for that command!");
-          $("text-input").value = "";
+      console.log("Below recycle script.");
+    }
+    if (
+      userInput === "talk to" ||
+      userInput === "talk to " ||
+      userInput === "talk to " + tabTalk
+    ) {
+      console.log("conditional accepted.");
+
+      if (Object.keys(rooms[currentRoom].people).length !== 1) {
+        if (talk <= Object.keys(rooms[currentRoom].people).length - 1) {
+          tabTalk = Object.keys(rooms[currentRoom].people)[talk];
+        } else {
+          talk = 0;
+          tabTalk = Object.keys(rooms[currentRoom].enemies)[talk];
         }
-        if (tabEnemy !== 0) {
-          document.getElementById("user-input").value = "attack " + tabEnemy;
+      } else {
+        talk = 0;
+        tabTalk = Object.keys(rooms[currentRoom].people)[talk];
+      }
+      if (tabTalk === undefined) {
+        addText("No target found for that command!");
+        $("text-input").value = "";
+      }
+      if (tabTalk !== 0) {
+        document.getElementById("user-input").value = "talk to " + tabTalk;
+        if (Object.keys(rooms[currentRoom].people).length !== 0) {
           talk++;
         }
       }
