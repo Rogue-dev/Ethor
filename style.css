@@ -58,8 +58,8 @@ input:focus {
 
 #minimap {
   border-style: solid;
-  width: 320px;
-  height: 320px;
+  width: 250px;
+  height: 250px;
   margin-left: 76%;
   margin-top: -42%;
 }
@@ -70,4 +70,13 @@ input:focus {
 
 canvas {
   margin: 0px;
+}
+
+#current-room-info {
+  width:250px;
+  height: 250px;
+  border-style: solid;
+  border-color: white;
+    margin-left: 76%;
+
 }

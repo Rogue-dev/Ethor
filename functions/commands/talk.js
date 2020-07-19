@@ -27,7 +27,9 @@ function talk(target) {
       checkExperience();
       }
     }
-  } else {
+  } else if (!Object.keys(rooms[currentRoom].enemies).includes(target)){
     addText("No target found by that name!");
+  } else {
+    addText("You cannot talk to that person, as they are an enemy!");
   }
 }

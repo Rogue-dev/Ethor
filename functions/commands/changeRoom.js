@@ -1,7 +1,8 @@
-/*global rooms currentRoom addText startCellY startCellX*/
+/*global rooms currentRoom addText startCellY startCellX roominfo*/
 function changeRoom(dir) {
   if (rooms[currentRoom].directions[dir] !== undefined) {
     currentRoom = rooms[currentRoom].directions[dir];
+    roominfo();
     addText(rooms[currentRoom].description);
     if (dir === "north") {
       startCellY = startCellY + 20;

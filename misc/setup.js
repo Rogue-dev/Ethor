@@ -1,3 +1,4 @@
+/*global roominfo*/
 var health = 100;
 var currentRoom = "start";
 const commands = [
@@ -15,8 +16,9 @@ const commands = [
   "Exits: Syntax: <b>\"exits\"</b> Description: Show exits to current room.",
   "Attack: Syntax: <b>\"attack \"{monster} [\"with \" {weapon}]</b> Description: Attack monsters.",
   "Other:",
-  "You can press \"tab\" to cycle throught the possible targets of the attack command, if you currently have attack typed into the textbox."
+  "You can press \"tab\" to cycle throught the possible targets of the attack command or talk to command, if you currently have attack or talk to typed into the textbox."
 ];
+roominfo();
 var inventory = ["rusty bronze dagger"];
 var quests = [];
 var monster = ""
