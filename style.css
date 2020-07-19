@@ -58,10 +58,10 @@ input:focus {
 
 #minimap {
   border-style: solid;
-  width: 250px;
-  height: 250px;
+  width: 21.25%;
+  height: 42.5%;
   margin-left: 76%;
-  margin-top: -42%;
+  margin-top: -51%;
 }
 
 ::-webkit-scrollbar {
@@ -73,10 +73,9 @@ canvas {
 }
 
 #current-room-info {
-  width:250px;
-  height: 250px;
+  width:21.25%;
+  height: 42.5%;
   border-style: solid;
   border-color: white;
-    margin-left: 76%;
-
+  margin-left: 76%;
 }
