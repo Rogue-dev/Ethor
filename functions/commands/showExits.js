@@ -1,3 +1,4 @@
+/*global cookies rooms currentRoom addText*/
 function showExits() {
   if (rooms[currentRoom].directions.hasOwnProperty("north")) {
     addText("North : " + rooms[currentRoom].directions["north"]);

@@ -1,4 +1,4 @@
-/*global rooms currentRoom addText oldLadyQuest inventory experience checkExperience*/
+/*global rooms currentRoom addText oldLadyQuest inventory experience checkExperience cookies beginnerArea*/
 function talk(target) {
   var newTarget = target.splice(2, target.length - 1);
   newTarget = newTarget.join();
@@ -20,6 +20,7 @@ function talk(target) {
         inventory.splice(inventory.indexOf("meat"), 1);
         addText("Thank you for the meat...Here is your reward, as promised.");
         addText("You have received 50 experience!");
+        beginnerArea = false;
         for (var i = 0; i < 10; i++) {
           experience += 5;
           checkExperience();

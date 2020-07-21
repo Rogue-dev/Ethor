@@ -1,4 +1,4 @@
-/*global rooms currentRoom addText*/
+/*global rooms currentRoom addText cookies*/
 var tabEnemy = 0;
 var enemy = 0;
 var tabTalk = 0;
@@ -8,7 +8,6 @@ window.addEventListener("keydown", function(event) {
   var value = $("#user-input")
     .val()
     .toLowerCase();
-
   if (value.split(" ")[0] + " " + value.split(" ")[1] === "talk to") {
     var word = value.split(" ")[0] + " " + value.split(" ")[1];
   } else {

@@ -35,7 +35,7 @@ var rooms = {
     },
     people: {
       "strange old lady":
-        "I have a quest for you, though you may not want to indulge the wants of a strange old lady like me. If you do, though, I'll make it worth your while. I need you to get some meat. It's been so long since I've had meat..."
+        "Hello!"
     },
     minimap: {
       x: 0,
@@ -104,7 +104,8 @@ var rooms = {
     description:
       "You try to cross the bridge but a troll jumps out and bites your leg!",
     directions: {
-      east: "bridge1"
+      east: "bridge1",
+      southwest: "forest1",
     },
     enemies: {
       bridgetroll: {
@@ -122,7 +123,20 @@ var rooms = {
       x: -2,
       y: 0
     }
-  }
+  },
+  forest1: {
+    description: "You stand on the edge of a dark and forboding forest...",
+    directions: {
+      northeast: "bridge2"
+    },
+    minimap: {
+      x: -3,
+      y: 1,
+    },
+    people: {
+      merchant: "Hello! To view my wares, type \"wares\""
+    }
+  },
 };
 
 var roomArr = Object.keys(rooms);
