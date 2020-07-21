@@ -1,5 +1,5 @@
 /*global rooms quests currentRoom commands inventory addText oldLadyQuest showExits changeRoom target monster showHelp
-showInventory talk showQuests attack cycle get*/
+showInventory talk showQuests attack cycle get wares*/
 function playerInput(input) {
   if (input.split(" ")[0] + " " + input.split(" ")[1] === "talk to") {
     var command = input.split(" ")[0] + " " + input.split(" ")[1];
@@ -33,6 +33,9 @@ function playerInput(input) {
       break;
     case "get":
       get(input.split(" ")[1]);
+      break;
+    case "wares":
+      wares();
       break;
     case "":
       break;

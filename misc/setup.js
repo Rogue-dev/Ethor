@@ -1,6 +1,5 @@
-/*global roominfo*/
+/*global roominfo getCookie cookies*/
 var health = 100;
-var currentRoom = "start";
 const commands = [
   "Syntax guide:",
   "&nbsp&nbsp&nbsp&nbspWords in quotes: Type this exact word, with capitalization and spaces",
@@ -18,12 +17,13 @@ const commands = [
   "Other:",
   "You can press \"tab\" to cycle throught the possible targets of the attack command or talk to command, if you currently have attack or talk to typed into the textbox."
 ];
-roominfo();
 var inventory = ["rusty bronze dagger"];
 var quests = [];
 var monster = ""
 var target = "";
+var currentRoom = "start"
 var command = [];
+var beginnerArea = true;
 var monsterHealth = 0;
 var monsterDamage = 0;
 var monsterLoot = ""

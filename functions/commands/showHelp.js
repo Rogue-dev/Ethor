@@ -1,4 +1,4 @@
-/*global commands*/
+/*global commands cookies*/
 function showHelp() {
   $("#game-text").append("<p>Here are the possible commands: </p>");
   $("#game-text").append("<p><ul>");

@@ -1,11 +1,13 @@
-/*global rooms currentRoom addText inventory*/
+/*global rooms currentRoom addText inventory cookies*/
 function get(object) {
   console.log(object)
   if (rooms[currentRoom].items[object] !== undefined) {
     console.log("Not undefined.")
     if (rooms[currentRoom].items[object] === "available") {
       console.log("available")
-      if (!(!object === "meat" && currentRoom === "trolls")) {
+      if (object === "meat" && currentRoom === "trolls" && rooms.trolls.enemies.troll1.status === "dead" &&
+        rooms.trolls.enemies.troll2.status === "dead" &&
+        rooms.trolls.enemies.troll3.status === "dead") {
         console.log("Last if gate passed successfully.")
         inventory.push(
           Object.keys(rooms[currentRoom].items)[
@@ -17,11 +19,7 @@ function get(object) {
         console.log("notification received.")
         rooms[currentRoom].items[object] === "unavailable";
         console.log("marked unavailable.")
-      } else if (
-        rooms.trolls.enemies.troll1.status === "alive" ||
-        rooms.trolls.enemies.troll2.status === "alive" ||
-        rooms.trolls.enemies.troll3.status === "alive"
-      ) {
+      } else {
         addText("Trolls are guarding the meat!");
       }
     } else {

@@ -1,4 +1,4 @@
-/*global inventory addText*/
+/*global inventory addText cookies*/
 function showInventory() {
   if (inventory.length === 0) {
     addText("<p>You are not carrying anything!</p>");
